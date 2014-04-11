@@ -86,6 +86,7 @@ class Person {
   public $turnOns;
   public $tvShows;
   public $urls;
+  public $userGrade;
 
   // Note: Not in the opensocial js person object directly
   public $isOwner = false;
@@ -599,5 +600,10 @@ class Person {
 
   public function setIsViewer($isViewer) {
     $this->setFieldImpl('isViewer', $isViewer);
+  }
+
+  public function setUserGrade($userGrade) {
+    $this->userGrade = $userGrade;
+    $this->setFieldImpl('userGrade', $userGrade);
   }
 }

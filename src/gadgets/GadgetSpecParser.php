@@ -80,7 +80,7 @@ class GadgetSpecParser {
         }
         // If view isnt defined and a profile was found, this will catch it
       } else {
-        $views = explode(',', $view);
+        $views = explode(',', str_replace(' ', '', $view));
         $this->processContent($gadget, $content, $views);
       }
     }

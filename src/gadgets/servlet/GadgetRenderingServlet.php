@@ -233,6 +233,19 @@ class GadgetRenderingServlet extends HttpServlet {
       $libs = explode(':', $forcedLibs);
     }
     $query .= $this->appendLibsToQuery($libs, $gadget);
+		$query .= '&opensocial_app_id=' . $_GET['opensocial_app_id'];
+		$query .= '&opensocial_viewer_id=' . $_GET['opensocial_viewer_id'];
+		$query .= '&opensocial_owner_id=' . $_GET['opensocial_owner_id'];
+		// TODO OAuth
+		$query .= "&oauth_consumer_key=e867eb971e19";
+		$query .= "&oauth_nonce=648132d28c6b8d2874b69285d091ddb76bf6749e";
+		$query .= "&oauth_signature=qstS%2BXSqRFCD27gm4gPP4CDWM54%3D";
+		$query .= "&oauth_signature_method=HMAC-SHA1";
+		$query .= "&oauth_timestamp=1397113377";
+		$query .= "&oauth_token=56b4d97c1a65f15dae76dd2b61bd6c44";
+		$query .= "&oauth_token_secret=1b0cdcbb8200029dd1c8ad3d34b45418";
+		$query .= "&oauth_version=1.0";
+		// TODO OAuth
     // code bugs out with me because of the invalid url syntax since we dont have a URI class to fix it for us
     // this works around that
     if (substr($query, 0, 1) == '&') {
